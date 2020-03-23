@@ -135,3 +135,28 @@ p.intro {
 .text-danger {
     color: #FF8380 !important;
 }
+
+.text-danger > a {
+    color: #FF8380 !important;
+}
+
+.text-danger > a:hover {
+    text-decoration: none;
+}
+
+input.sum {
+    width: 100%;
+    border: 2px solid #BDD8ED;
+    font-size: 1em;
+    color: #6293B8;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.blue-btn {
+    background-color: #6293B8;
+}
+
+.red-btn {
+    background-color: #FF8380;
+}

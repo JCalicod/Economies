@@ -95,6 +95,11 @@ body {
     border: 1px solid #3F7299;
 }
 
+.login-block input {
+    background-color: transparent !important;
+    border-bottom: 1px solid #6293B8 !important;
+}
+
 .no-account {
     margin-top: 30px;
 }

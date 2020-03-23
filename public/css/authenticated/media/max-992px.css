@@ -3,6 +3,10 @@
         font-size: 1.2rem;
     }
 
+    .alert {
+        font-size: 12px !important;
+    }
+
     /* Nav */
     .nav-link {
         text-align: center;

@@ -2,25 +2,35 @@
 
 {% block body %}
 
-    <div class="container-fluid p-4">
-        <div class="row mb-3">
-            <div class="col-lg-2"></div>
-            <div class="col-lg-8 add-form">
-                <p class="text-danger">- A débiter</p>
-                <select class="select" id="toDebit">
-                    <option>Choix du compte</option>
-                    {% for account in accounts %}
-                        <option value="{{ account.id }}" class="toDebitChoice">{{ account.title }}</option>
-                    {% endfor %}
-                </select>
+    {% if accounts|length > 1 %}
+        <div class="container-fluid p-4">
+            <div class="row mb-3">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8 add-form">
+                    <div id="success"></div>
+                    <p class="text-danger">- A débiter</p>
+                    <select class="select" id="toDebit">
+                        <option>Choix du compte</option>
+                        {% for account in accounts %}
+                            <option value="{{ account.id }}" class="toDebitChoice">{{ account.title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-lg-2"></div>
             </div>
-            <div class="col-lg-2"></div>
+            <div class="row mb-3" id="cards-debit-content"></div>
+            <div class="row mb-3" id="cards-credit-content"></div>
         </div>
-        <div class="row mb-3" id="cards-debit-content"></div>
-        <div class="row mb-3" id="cards-credit-content"></div>
-    </div>
 
-    {% include 'authenticated/manager/scripts/choose_to_debit_account.html.twig' %}
-    {% include 'authenticated/manager/scripts/choose_to_credit_account.html.twig' %}
+        {% include 'authenticated/manager/scripts/choose_to_debit_account.html.twig' %}
+        {% include 'authenticated/manager/scripts/choose_to_credit_account.html.twig' %}
+        {% include 'authenticated/manager/scripts/transfer.html.twig' %}
+    {% else %}
+        <div class="container-fluid p-4">
+            <div class="alert alert-info" role="alert">
+                Vous devez posséder au moins 2 comptes pour effectuer un transfert.
+            </div>
+        </div>
+    {% endif %}
 
 {% endblock %}

@@ -25,26 +25,17 @@
                         </div>
                     {% endfor %}
 
-                    <h1 class="mb-3 edit-h1">Edition du compte</h1>
-                    <div class="add-form">
-                        {{ form_start(form) }}
-                        <span class="title">Nom du compte :</span><br>
-                        {{ form_row(form.title) }}
-                        <span class="title">Description :</span><br>
-                        {{ form_row(form.description) }}
-                        <span class="title">Somme :</span><br>
-                        {{ form_row(form.amount) }}
-                        <span class="title">Couleur :</span><br>
-                        {{ form_row(form.color) }}
-                        <div class="mt-3">
-                            {{ form_row(form.save) }}
+                    <h1 class="mb-3 edit-h1">Suppression : {{ account.title }}</h1>
+                    <p>En êtes-vous sûr ?</p>
+                    {{ form_start(form) }}
+                    <div class="row">
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-8">
+                            {{ form_widget(form.save, { 'attr': { 'class': 'w-100 btn red-btn' } }) }}
                         </div>
-                        {{ form_end(form) }}
-
-                        <div class="mt-3">
-                            <span class="text-danger font-italic"><a href="{{ path('delete_account', { id: account.id }) }}">Supprimer définitivement ce compte</a></span>
-                        </div>
+                        <div class="col-lg-2"></div>
                     </div>
+                    {{ form_end(form) }}
                 </div>
                 <div class="col-lg-4"></div>
             </div>

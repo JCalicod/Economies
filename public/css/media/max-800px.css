@@ -2,4 +2,8 @@
     .login-block {
         width: 80vw;
     }
+
+    .alert {
+        font-size: 12px !important;
+    }
 }

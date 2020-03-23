@@ -4,7 +4,14 @@
         <div class="card-body">
             <h5 class="card-title">{{ account.title }} <span class="float-right">{{ account.amount }}€</span></h5>
             <p class="card-text">{{ account.description }}</p>
+            <input type="hidden" id="toCreditAccount" value="{{ account.id }}">
         </div>
     </div>
+</div>
+<div class="col-lg-2"></div>
+
+<div class="col-lg-2"></div>
+<div class="col-lg-8">
+    <button class="btn blue-btn w-100" id="transferBtn">Transférer</button>
 </div>
 <div class="col-lg-2"></div>

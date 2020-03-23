@@ -4,7 +4,8 @@
         <div class="card-body">
             <h5 class="card-title">{{ account.title }} <span class="float-right">{{ account.amount }}€</span></h5>
             <p class="card-text">{{ account.description }}</p>
-            <input type="number" value="12">
+            <input type="number" id="amount" class="sum" value="0" min="0" max="{{ account.amount }}">
+            <input type="hidden" id="toDebitAccount" value="{{ account.id }}">
         </div>
     </div>
 </div>

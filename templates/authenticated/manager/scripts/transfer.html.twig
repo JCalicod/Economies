@@ -1,0 +1,29 @@
+<script>
+    function transfer() {
+        var btn = document.getElementById('transferBtn');
+        btn.addEventListener('click', validate, false);
+    }
+
+    function validate(evt) {
+        evt.srcElement.id = -1;
+        evt.srcElement.style.cursor = "wait";
+        var amount = document.getElementById('amount').value;
+        var toDebitAccount = document.getElementById('toDebitAccount').value;
+        var toCreditAccount = document.getElementById('toCreditAccount').value;
+
+        $.ajax({
+            url: "{{ path('validate_transfer') }}",
+            type: "POST",
+            data: {
+                amount: amount,
+                toDebit: toDebitAccount,
+                toCredit: toCreditAccount
+            },
+            dataType: "html"
+        }).done(function (response) {
+            document.getElementById('cards-debit-content').innerHTML = '';
+            document.getElementById('cards-credit-content').innerHTML = '';
+            document.getElementById('success').innerHTML = response;
+        });
+    }
+</script>
