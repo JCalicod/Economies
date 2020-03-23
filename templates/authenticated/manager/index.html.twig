@@ -1,0 +1,59 @@
+{% extends 'authenticated/base.html.twig' %}
+
+{% block body %}
+
+    <div class="container-fluid p-4">
+        <p class="intro">Connecté sur l'adresse  <b>{{ user.username }}</b>.</p>
+
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        {% for error in errors %}
+            <div class="alert alert-danger">
+                {{ error }}
+            </div>
+        {% endfor %}
+
+        {% set i = 0 %}
+
+        {% for account in accounts %}
+            {% if i%3 == 0 %}
+                <div class="row">
+            {% endif %}
+                    <div class="col-lg-4 mb-3">
+                        <div class="card {{ account.color }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ account.title }} <span class="float-right">{{ account.amount }}€</span></h5>
+                                <p class="card-text">{{ account.description }}</p>
+                                <a href="{{ path('edit_account', { id: account.id }) }}" class="btn">Editer</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% set i = i+1 %}
+            {% if i%3 == 0 and i!=0 %}
+                </div>
+            {% endif %}
+        {% endfor %}
+        {% if i%3 == 0 and i!=0 %}
+        <div class="row mb-3">
+        {% endif %}
+        <div class="col-lg-4">
+            <div class="add-account" title="Ajouter un compte">+</div>
+            <div class="add-account-opened">
+                <div class="minus">x</div>
+                <div class="add-form">
+                    {{ form(form) }}
+                </div>
+            </div>
+        </div>
+        {% if i%3 != 0 %}
+            </div>
+        {% endif %}
+
+    </div>
+
+    <script src="{{ asset('js/add_account.js') }}"></script>
+{% endblock %}

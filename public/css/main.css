@@ -1,0 +1,110 @@
+body {
+    background-color: #8EB7D6;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'McLaren', cursive;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+#logo {
+    font-family: 'Pacifico', cursive;
+    max-width: 300px;
+    margin: auto;
+    margin-bottom: 30px;
+    font-size: 3em;
+    text-align: center;
+}
+
+#logo > .gold {
+    color: #FFDF82;
+}
+
+.login-block {
+    width: 50vw;
+    max-width: 400px;
+    margin: auto;
+    background-color: #fff;
+    color: #565656;
+    padding: 20px;
+    border: 1px solid rgba(0,0,0,.125);
+    -moz-border-radius : 0.25rem;
+    -webkit-border-radius : 0.25rem;
+    border-radius : 0.25rem;
+    text-align: center;
+}
+
+.login-block > h1 {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #6293B8 !important;
+}
+
+.login-block > form > label, #registration_password > div > label, #settings > div > label {
+    display: none;
+}
+
+.login-block > form > input,
+#registration_password > div > input,
+#settings > div > input {
+    display: block;
+    border: 0;
+    border-bottom: 1px solid #e0e0e0;
+    border-radius: 0;
+    width: 80%;
+    height: 35px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 5px;
+    font-size: 1.1em;
+}
+
+.login-block > form > input.form-control:focus,
+.login-block > form > input:focus,
+#registration_password > div > input:focus,
+#settings > div > input:focus {
+    outline: none !important;
+    box-shadow: none;
+    border-bottom: 1px solid #6293B8;
+}
+
+#login_save, #settings_save {
+    background-color: #6293B8;
+    color: #fff;
+    border: 1px solid #6293B8;
+    font-size: 1.1em;
+    margin-top: 10px;
+    padding: 5px 10px 5px 10px;
+    -moz-border-radius : 5px;
+    -webkit-border-radius : 5px;
+    border-radius : 5px;
+    width: 80%;
+}
+
+#login_save:hover, #settings_save:hover {
+    background-color: #3F7299;
+    border: 1px solid #3F7299;
+}
+
+.no-account {
+    margin-top: 30px;
+}
+
+.no-account > a {
+    margin-top: 30px;
+    color: #6293B8;
+}
+
+.no-account > a:hover {
+    color: #3F7299;
+    text-decoration: none;
+}

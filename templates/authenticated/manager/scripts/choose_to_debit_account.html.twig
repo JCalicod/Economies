@@ -1,0 +1,23 @@
+<script>
+    var toDebitChoices = document.getElementsByClassName('toDebitChoice');
+    for (var i = 0; i < toDebitChoices.length; i++) {
+        toDebitChoices[i].addEventListener('click', getToDebitAccount, false);
+    }
+
+    function getToDebitAccount(evt) {
+        var accountID = evt.srcElement.value;
+
+        $.ajax({
+            url: "{{ path('get_account') }}",
+            type: "POST",
+            data: {
+                accountID: accountID,
+                type: 'debit'
+            },
+            dataType: "html"
+        }).done(function (response) {
+            document.getElementById('cards-debit-content').innerHTML = response;
+            chooseToCreditAccount();
+        });
+    }
+</script>

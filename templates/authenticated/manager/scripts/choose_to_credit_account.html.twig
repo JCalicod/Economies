@@ -1,0 +1,24 @@
+<script>
+    function chooseToCreditAccount() {
+        var toCreditChoices = document.getElementsByClassName('toCreditChoice');
+        for (var i = 0; i < toCreditChoices.length; i++) {
+            toCreditChoices[i].addEventListener('click', getToCreditAccount, false);
+        }
+    }
+
+    function getToCreditAccount(evt) {
+        var accountID = evt.srcElement.value;
+
+        $.ajax({
+            url: "{{ path('get_account') }}",
+            type: "POST",
+            data: {
+                accountID: accountID,
+                type: 'credit'
+            },
+            dataType: "html"
+        }).done(function (response) {
+            document.getElementById('cards-credit-content').innerHTML = response;
+        });
+    }
+</script>

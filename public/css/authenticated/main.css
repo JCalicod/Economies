@@ -1,0 +1,137 @@
+body {
+    background-color: #f8f9fa;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'McLaren', cursive;
+}
+
+h1 {
+    color: #565656 !important;
+    font-size: 1.5rem;
+}
+
+h1.edit-h1 {
+    color: #6293B8 !important;
+}
+
+.alert {
+    font-size: 0.8rem;
+}
+
+.page.connected {
+    height: 70vh;
+}
+
+p.intro {
+    color: #565656;
+}
+
+.add-account {
+    color: #6293B8;
+    font-size: 4em;
+    background-color: #fff;
+    width: 95px;
+    height: 95px;
+    text-align: center;
+    border: 1px solid #BDD8ED;
+    cursor: pointer;
+}
+
+.add-account-opened {
+    padding: 20px;
+    color: #8EB7D6;
+    font-size: 1.5em;
+    background-color: #fff;
+    width: 100%;
+    height: auto;
+    border: 1px solid #BDD8ED;
+    display: none;
+}
+
+.add-account-opened > .minus {
+    position: absolute;
+    top: 5px;
+    left: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #6293B8;
+}
+
+.add-account-opened > .add-form {
+    margin-left: 20px;
+    text-align: center;
+}
+
+.add-form .title {
+    color: #565656;
+    font-size: 1em;
+}
+
+.add-form label {
+    display: none;
+}
+
+.add-form input, .add-form select, .add-form button {
+    width: 100%;
+    border: 1px solid #BDD8ED;
+    font-size: 1em;
+    color: #6293B8;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.add-account-opened input, .add-account-opened select {
+    font-size: 0.7em !important;
+}
+
+.add-form button {
+    background-color: #6293B8;
+    color: #f8f9fa;
+}
+
+.add-form input::placeholder {
+    color: #ABC6DB;
+}
+
+
+/* Select option colors */
+.add-form select option[value="1"] {
+    background-color: #8EB7D6;
+}
+
+.add-form select option[value="2"] {
+    background-color: #FFEEE7;
+}
+
+.add-form select option[value="3"] {
+    background-color: #FFF5E7;
+}
+
+.add-form select option[value="4"] {
+    background-color: #FFF9E7;
+}
+
+.add-form select option[value="5"] {
+    background-color: #EAFCF4;
+}
+
+.add-form select option[value="6"] {
+    background-color: #ECECFC;
+}
+
+/* Error messages */
+.alert-danger {
+    background-color: #FFE3DF;
+    color: #B43626;
+}
+
+.text-success {
+    color: #60C097 !important;
+}
+
+.text-danger {
+    color: #FF8380 !important;
+}

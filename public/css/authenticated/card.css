@@ -1,0 +1,59 @@
+/* All */
+.card-body > .card-title {
+    font-weight: bold;
+}
+
+.card-body > p {
+    padding-bottom: 20px;
+}
+
+.btn {
+    color: #fff;
+}
+
+.btn:hover {
+    color: #fff;
+}
+
+/* Blue */
+.card {
+    color: #8EB7D6;
+}
+
+.card > .card-body > .card-title {
+    color: #6293B8;
+}
+
+.card .btn {
+    background-color: #6293B8;
+}
+
+.card-body > p {
+    border-bottom: 1px solid #6293B8;
+}
+
+/* Red */
+.card.red {
+    background-color: #FFEEE7;
+}
+
+/* Yellow */
+
+.card.yellow {
+    background-color: #FFF9E7;
+}
+
+/* Green */
+.card.green {
+    background-color: #EAFCF4;
+}
+
+/* Purple */
+.card.purple {
+    background-color: #ECECFC;
+}
+
+/* Orange */
+.card.orange {
+    background-color: #FFF5E7;
+}

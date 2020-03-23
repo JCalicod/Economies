@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="page">
+        <div class="main-block">
+            <div id="logo"><span class="gold">&euro;</span>conomies</div>
+            <div class="login-block">
+                <h1>Inscription</h1>
+
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+
+                {% for error in errors %}
+                    <div class="alert alert-danger">
+                        {{ error }}
+                    </div>
+                {% endfor %}
+
+                {{ form_start(form) }}
+                {{ form_widget(form.email)}}
+                {{ form_widget(form.password)}}
+                {{ form_widget(form.save, { 'id': 'login_save'} )}}
+                {{ form_end(form) }}
+
+                <p class="no-account">
+                    Déjà inscrit ? <a href="{{ path('app_login') }}">Connecte-toi !</a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
