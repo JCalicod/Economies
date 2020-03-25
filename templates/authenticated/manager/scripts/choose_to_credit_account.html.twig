@@ -1,9 +1,7 @@
 <script>
     function chooseToCreditAccount() {
-        var toCreditChoices = document.getElementsByClassName('toCreditChoice');
-        for (var i = 0; i < toCreditChoices.length; i++) {
-            toCreditChoices[i].addEventListener('click', getToCreditAccount, false);
-        }
+        var toCreditChoice = document.getElementById('toCredit');
+        toCreditChoice.addEventListener('change', getToCreditAccount, false);
     }
 
     function getToCreditAccount(evt) {

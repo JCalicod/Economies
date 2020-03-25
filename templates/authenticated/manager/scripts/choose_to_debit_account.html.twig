@@ -1,8 +1,6 @@
 <script>
-    var toDebitChoices = document.getElementsByClassName('toDebitChoice');
-    for (var i = 0; i < toDebitChoices.length; i++) {
-        toDebitChoices[i].addEventListener('click', getToDebitAccount, false);
-    }
+    var toDebit = document.getElementById('toDebit');
+    toDebit.addEventListener('change', getToDebitAccount, false);
 
     function getToDebitAccount(evt) {
         var accountID = evt.srcElement.value;
